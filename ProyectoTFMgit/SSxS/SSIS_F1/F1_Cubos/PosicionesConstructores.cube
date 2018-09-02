@@ -1,0 +1,203 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f506c959-5fa5-4fe0-b3c4-d4c9f2a5b4fd" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>PosicionesConstructores</ID>
+  <Name>PosicionesConstructores</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="f499e390-003f-4068-9a19-036f51bea42c">
+      <ID>DIM Carreras</ID>
+      <Name>DIM Carreras</Name>
+      <DimensionID>DIM Carreras</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="da351c98-7fc2-4238-bcc7-7ba9e19752d8">
+          <AttributeID>Race Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="050fa521-69b4-4457-b64f-5252c03120ac">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c0945e93-b3cf-4a3a-95ab-1d5ff198d097">
+          <AttributeID>Round</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="70dce007-8150-427e-ae5e-823e96f79968">
+          <AttributeID>Circuit Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="262579a2-df82-42cb-abb2-3c7d226e6c98">
+          <AttributeID>Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a31cfb04-7364-42d7-98e0-a7f212845909">
+          <AttributeID>Date</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="a7a46a9c-bd27-4dba-8f39-4811fc55bdbb">
+      <ID>DIM Constructores</ID>
+      <Name>DIM Constructores</Name>
+      <DimensionID>DIM Constructores</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="4597737e-824e-4e29-be53-21977a6e3d63">
+          <AttributeID>Constructor Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6baaf848-814c-4a3d-8ed0-f19c3684c1ed">
+          <AttributeID>Constructor Ref</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="498c86ba-e8f7-4583-b4c6-3f273160975b">
+          <AttributeID>Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e49d494f-de1a-438e-91c9-293a9e5882e3">
+          <AttributeID>Nationality</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="3c082134-c696-426e-a4ac-0717ab0ad451">
+      <ID>FACT Posiciones Constructores</ID>
+      <Name>FACT Posiciones Constructores</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="b1220463-29c0-45e0-b288-77a0d39787f4">
+          <ID>Constructor Standings Id</ID>
+          <Name>Constructor Standings Id</Name>
+          <Source dwd:design-time-name="dab06f61-402a-4b7e-89d7-689050f9ea48">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="a1247243-543d-46ed-9460-de5090c066dc">
+              <TableID>dbo_FACTPosicionesConstructores</TableID>
+              <ColumnID>constructorStandingsId</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="39c166d4-bd6f-4289-9bdf-f97e89d50750">
+          <ID>Points</ID>
+          <Name>Points</Name>
+          <Source dwd:design-time-name="4ad2b5ec-c862-40c8-8d06-3d8249e2b65b">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="87ed0fff-9b3c-4a16-a519-181f528858da">
+              <TableID>dbo_FACTPosicionesConstructores</TableID>
+              <ColumnID>points</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6ad4a978-c8ae-4f42-a159-7005fca1e637">
+          <ID>Position</ID>
+          <Name>Position</Name>
+          <Source dwd:design-time-name="d355af9d-8f0a-44fe-8567-1dfa7c331799">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="30fa53a2-7a3f-4b2b-8d01-cc9b2113d991">
+              <TableID>dbo_FACTPosicionesConstructores</TableID>
+              <ColumnID>position</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6db0b99a-16f7-4054-885c-4f99b170686d">
+          <ID>Wins</ID>
+          <Name>Wins</Name>
+          <Source dwd:design-time-name="1b7aa923-4881-4f5e-9b7f-87123d33cf1f">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="08b4b93f-e876-4503-942c-1e4867f1fb07">
+              <TableID>dbo_FACTPosicionesConstructores</TableID>
+              <ColumnID>wins</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="b14a8162-39b2-41f0-8662-ddcefcaf44a3">
+          <ID>FACT Posiciones Constructores Count</ID>
+          <Name>FACT Posiciones Constructores Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="be8ce92e-2bfe-4c30-bd46-b4bb50726061">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="12c35bf1-2a28-4cc4-b79c-e393e5ed2158">
+              <TableID>dbo_FACTPosicionesConstructores</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="7901230e-c904-4728-9182-40140c132c39">
+          <CubeDimensionID>DIM Carreras</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="2eb487b8-7616-4d04-9cee-8e5d7786a1c4">
+              <AttributeID>Race Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="aae40a00-2fdd-47ba-b0f1-007c10f18ecc">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="31a11f9c-8bab-4849-9b4a-2dece9a8b1cd">
+                    <TableID>dbo_FACTPosicionesConstructores</TableID>
+                    <ColumnID>raceId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="62122921-d651-42b2-a436-d61bca9e2b05">
+          <CubeDimensionID>DIM Constructores</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="6c83fb81-0632-4df8-a6e3-52b0d2f9bdac">
+              <AttributeID>Constructor Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="c12b200a-9bcd-4476-8e74-596f17a1be22">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="654e3328-48f1-4066-9161-eb0695833e0b">
+                    <TableID>dbo_FACTPosicionesConstructores</TableID>
+                    <ColumnID>constructorId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="d4aa6bd6-9c73-4564-9ba2-384987555bd0">
+    <DataSourceViewID>F1 DWH</DataSourceViewID>
+  </Source>
+</Cube>

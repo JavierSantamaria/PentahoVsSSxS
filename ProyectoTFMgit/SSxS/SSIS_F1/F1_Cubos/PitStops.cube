@@ -1,0 +1,282 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="924a6859-afe1-4320-b372-0ca33300003d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>F1 DWH 1</ID>
+  <Name>PitStops</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="6" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-13017" scrolltop="-1737" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="34925" y="13891" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIMCarreras" left="20" top="6395" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="3572" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000b80b0000f40d0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DIMCarreras" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DIMPilotos" left="5420" top="211" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3000" height="3572" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000b80b0000f40d0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DIMPilotos" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="FACTPitStops" left="20" top="0" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="3000" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000b80b00009b0f0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_FACTPitStops" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="1121" top="3695" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FACTPitStops-DIMCarreras]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="3" sourceattachpoint="4" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="1520" y="6395" />
+              <point x="1520" y="3995" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="2720" top="1598" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FACTPitStops-DIMPilotos]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="3" sourceattachpoint="16" destattachpoint="17" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="5420" y="1997" />
+              <point x="3020" y="1997" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-13017</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-1737</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="ebca8fd7-e6a4-421a-a04a-f0a3f75c5cec">
+      <ID>DIM Carreras</ID>
+      <Name>DIM Carreras</Name>
+      <DimensionID>DIM Carreras</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="98bf68d2-6702-4a78-a65d-1e74d04a3065">
+          <AttributeID>Race Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0b2adcd5-aac8-408f-a9fa-42e2a4c844f6">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="58ceca3c-1025-41c3-9fba-ea8d20ebdb8f">
+          <AttributeID>Round</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="09500dbd-540b-43bc-a5e4-15efd6d64051">
+          <AttributeID>Circuit Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1512081a-dc8a-40c5-9868-62cebb8b5e87">
+          <AttributeID>Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fb6cde97-cb9e-45d9-9776-37a95cb5b4b6">
+          <AttributeID>Date</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="7a2c5312-a9f1-4c90-9f0a-e5b0efa3140a">
+      <ID>DIM Pilotos</ID>
+      <Name>DIM Pilotos</Name>
+      <DimensionID>DIM Pilotos</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="ba00614b-28d4-4a09-8014-79fb9e5005e5">
+          <AttributeID>Driver Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c6f05260-4f46-4376-9bff-95cfa1d009ba">
+          <AttributeID>Driver Ref</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="07d949f1-a197-4808-9cad-355c4b17fe8f">
+          <AttributeID>Forename</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c15a28f4-3554-4ca9-9e30-cfc7f0b15109">
+          <AttributeID>Surname</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a9898f06-20d6-4e3d-918b-0598ea6f5c4b">
+          <AttributeID>Dob</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3d2d4f93-5871-4187-ae2f-eb48c2051b36">
+          <AttributeID>Nationality</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="e5118d64-9b98-4a66-aa89-b8682aadb61c">
+      <ID>FACT Pit Stops</ID>
+      <Name>FACT Pit Stops</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="fd51e686-85ce-41d9-af6a-2cff441fce90">
+          <ID>Stop</ID>
+          <Name>Stop</Name>
+          <Source dwd:design-time-name="da6aeca1-62b7-4b06-a51a-a84aabdc69f6">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="be129e8a-b63b-4a4c-a77a-2547c88f03bc">
+              <TableID>dbo_FACTPitStops</TableID>
+              <ColumnID>stop</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c3b5498b-21ad-447c-b376-b2653158939f">
+          <ID>Lap</ID>
+          <Name>Lap</Name>
+          <Source dwd:design-time-name="5a7883e1-bd44-4cb0-83fa-026c88b94006">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e345c85e-a215-458e-8ebe-269793fc2512">
+              <TableID>dbo_FACTPitStops</TableID>
+              <ColumnID>lap</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="86ae7987-025d-41bb-b37a-699ecbcbdb2b">
+          <ID>Milliseconds</ID>
+          <Name>Milliseconds</Name>
+          <Source dwd:design-time-name="ccc7b97f-b0eb-4082-923c-ab99807727b5">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="234a88ba-59fa-4eba-a2f5-e7c3c2f219ba">
+              <TableID>dbo_FACTPitStops</TableID>
+              <ColumnID>milliseconds</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="541a8436-61cd-4d1a-895c-4636a1b54aeb">
+          <ID>FACT Pit Stops Count</ID>
+          <Name>FACT Pit Stops Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="c1ecff12-73f5-42ac-9f81-1f600c92a33d">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="4340613b-9616-485f-9a60-46e39bceb534">
+              <TableID>dbo_FACTPitStops</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="d94e92e1-5230-4107-ad69-12ebac3c18f2">
+          <CubeDimensionID>DIM Carreras</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="d2d8e617-449e-4b02-82b6-413cbe437d31">
+              <AttributeID>Race Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="3bca3ff0-0a63-4797-aff1-221892c46c2e">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="cf55effd-4d24-492b-9245-9dba060ff0c5">
+                    <TableID>dbo_FACTPitStops</TableID>
+                    <ColumnID>raceId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="3647b017-be15-40e8-9b32-35521b2b3a4d">
+          <CubeDimensionID>DIM Pilotos</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="0ce489be-e5c8-4322-857a-fa6d767b3af5">
+              <AttributeID>Driver Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="de281d4c-032f-48a7-951a-a5874cf8cccf">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e2de635b-a165-40b3-b023-c5f8ed19f871">
+                    <TableID>dbo_FACTPitStops</TableID>
+                    <ColumnID>driverId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="169f350d-3c7f-45ef-b26b-215c69579464">
+    <DataSourceViewID>F1 DWH</DataSourceViewID>
+  </Source>
+</Cube>

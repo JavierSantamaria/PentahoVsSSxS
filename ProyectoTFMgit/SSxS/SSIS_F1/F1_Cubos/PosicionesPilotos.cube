@@ -1,0 +1,209 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="2dfb3514-6e04-46f6-8f66-6d14f3a15bbb" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>PosicionesPilotos</ID>
+  <Name>PosicionesPilotos</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="52780e8c-f033-402c-8a09-ae0e402547c7">
+      <ID>DIM Carreras</ID>
+      <Name>DIM Carreras</Name>
+      <DimensionID>DIM Carreras</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="1727e4ba-973b-40f2-966b-20615da1f800">
+          <AttributeID>Race Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="14641e42-139d-4350-a784-5825015f4e21">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0a35194a-291b-4343-9ff3-07af730ce894">
+          <AttributeID>Round</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="43dcf74c-fdc9-4999-a8c8-9b650fc9a663">
+          <AttributeID>Circuit Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a9ce04bd-45a9-4f59-80c3-e7d6615fe01a">
+          <AttributeID>Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="10be3e2e-7e2d-4181-a99c-36ae02ba7ab3">
+          <AttributeID>Date</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="199931b7-dfef-41b7-a3ee-fa44712480ae">
+      <ID>DIM Pilotos</ID>
+      <Name>DIM Pilotos</Name>
+      <DimensionID>DIM Pilotos</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="bb3c694c-1002-4809-ae09-6501d9fb122a">
+          <AttributeID>Driver Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="be5fad67-71cd-458a-be8d-ff7430a869f0">
+          <AttributeID>Driver Ref</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bfad67c2-abd5-4fba-a0f0-c829372e5010">
+          <AttributeID>Forename</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e75d48f0-bf6b-48cd-a1cd-8dee9dff2fea">
+          <AttributeID>Surname</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5615929b-b83a-484c-a8ea-807cd6b066d9">
+          <AttributeID>Dob</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d352b611-77be-4f04-8077-af576911eaec">
+          <AttributeID>Nationality</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="3950685c-a3b4-41fd-bdaf-d1265df4a919">
+      <ID>FACT Posiciones Pilotos</ID>
+      <Name>FACT Posiciones Pilotos</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="c3a522cd-77c7-4fc2-9516-dff641b21f4f">
+          <ID>Points</ID>
+          <Name>Points</Name>
+          <Source dwd:design-time-name="3254c60c-bf41-47f9-b3af-ed6c7002052e">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="932d7d45-a67a-45b6-bce3-a4e3227478e2">
+              <TableID>dbo_FACTPosicionesPilotos</TableID>
+              <ColumnID>points</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="f18f9406-ac4e-4fdd-89c0-c931b640c60e">
+          <ID>Position</ID>
+          <Name>Position</Name>
+          <Source dwd:design-time-name="f9e86b64-2b57-48dc-b144-de8ee35308d2">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="220d4874-a8ae-4b8d-8e51-52a6a8f99da1">
+              <TableID>dbo_FACTPosicionesPilotos</TableID>
+              <ColumnID>position</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="5f34cb43-3507-43f7-998c-2b7ccea3b673">
+          <ID>Driver Standings Id</ID>
+          <Name>Driver Standings Id</Name>
+          <Source dwd:design-time-name="3294ef76-c231-49d4-b710-9e5148ccf0b6">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="29260fff-f70e-496b-98c6-0a61f9ac96fa">
+              <TableID>dbo_FACTPosicionesPilotos</TableID>
+              <ColumnID>driverStandingsId</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="8ce7e643-1bdb-4742-b2b0-2433f5e1575c">
+          <ID>Wins</ID>
+          <Name>Wins</Name>
+          <Source dwd:design-time-name="3fba0ece-7412-4faf-81c6-9304b1a1d644">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="aaebae47-2076-4aca-b225-76c2cc64d838">
+              <TableID>dbo_FACTPosicionesPilotos</TableID>
+              <ColumnID>wins</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="bf96b6e8-ef86-4486-92b5-b8154bcebc90">
+          <ID>FACT Posiciones Pilotos Count</ID>
+          <Name>FACT Posiciones Pilotos Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="5e540ca3-4b62-46b6-a651-9e30894bf1db">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="13a33b34-60c4-4324-bd3e-21f59a9b81ae">
+              <TableID>dbo_FACTPosicionesPilotos</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c3f01cd0-f41b-4ea8-a68c-c41d182ac72f">
+          <CubeDimensionID>DIM Carreras</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="dd09aea4-6461-4715-b276-5447721773b2">
+              <AttributeID>Race Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="3822f950-76c7-4572-bd5e-c6dbff17876b">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="02a2b37d-2c8e-4314-bd39-b729da5edc12">
+                    <TableID>dbo_FACTPosicionesPilotos</TableID>
+                    <ColumnID>raceId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0bd91a35-f795-4fa8-a331-e7e52b603f99">
+          <CubeDimensionID>DIM Pilotos</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="454165e3-3996-4572-aa98-7dd311c85419">
+              <AttributeID>Driver Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="89895410-7f34-4876-a85d-ff557c3837be">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="28bb2f6c-d8fa-4c49-89ac-1c6f633f0ac8">
+                    <TableID>dbo_FACTPosicionesPilotos</TableID>
+                    <ColumnID>driverId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="6fd5913d-aa64-405c-a102-7fbf3b1d8c99">
+    <DataSourceViewID>F1 DWH</DataSourceViewID>
+  </Source>
+</Cube>
