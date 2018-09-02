@@ -1,0 +1,198 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="98cea60a-0e73-48e6-8c0f-8acde56c9c63" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>TiempoVuelta</ID>
+  <Name>TiempoVuelta</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="8fd298e1-59cc-431e-8f31-32c6c097f799">
+      <ID>DIM Carreras</ID>
+      <Name>DIM Carreras</Name>
+      <DimensionID>DIM Carreras</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="c006f480-09de-4cab-81c0-8fd325cd8c7c">
+          <AttributeID>Race Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d4de45a2-de6b-4abc-a6fd-4e0b68fb9bed">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a2441cff-ddee-4649-88b0-f1dfabab3d14">
+          <AttributeID>Round</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="821ffa16-9752-45b9-97ff-9bdd7890233f">
+          <AttributeID>Circuit Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="01295da8-7c41-4d1f-a2de-4d4e0971859a">
+          <AttributeID>Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="85e038d6-e07a-40f9-a3bc-4a6ad61c951d">
+          <AttributeID>Date</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="dce1338f-1345-4c6b-b05f-9dd4922824c2">
+      <ID>DIM Pilotos</ID>
+      <Name>DIM Pilotos</Name>
+      <DimensionID>DIM Pilotos</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="32257b47-3d74-4051-94c0-e05c1bdae650">
+          <AttributeID>Driver Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0e4a127b-8b81-4f77-9bf2-2658df62472b">
+          <AttributeID>Driver Ref</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d86d7297-2bec-481a-b076-f23a0aaabd35">
+          <AttributeID>Forename</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8dc338e3-4418-4a57-a58b-f23006e8678b">
+          <AttributeID>Surname</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="80e971b7-dcbc-4c45-bf77-f08518ae1a51">
+          <AttributeID>Dob</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="928cfd59-f018-4dd5-aacd-ea86875d1d61">
+          <AttributeID>Nationality</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="2d5e9364-f077-4f04-a214-334ac6932c65">
+      <ID>FACT Tiempo Vuelta</ID>
+      <Name>FACT Tiempo Vuelta</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="38f04155-2c91-43ee-a155-a37792a637cc">
+          <ID>Lap</ID>
+          <Name>Lap</Name>
+          <Source dwd:design-time-name="36bc9af2-a1c9-497f-848b-e089e86d959c">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="023a3053-fea7-40c5-9923-5d52a6573dcb">
+              <TableID>dbo_FACTTiempoVuelta</TableID>
+              <ColumnID>lap</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="cc2e5cee-4aaf-44a0-b2d7-aac472a2f23d">
+          <ID>Position</ID>
+          <Name>Position</Name>
+          <Source dwd:design-time-name="15acb62e-90cd-4d5d-acf3-be779cc2e0d7">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ccb93e57-b7a0-42ab-b91c-7d73c4268b3b">
+              <TableID>dbo_FACTTiempoVuelta</TableID>
+              <ColumnID>position</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="3d3a8542-be10-45ff-8ca1-a081707ed5ad">
+          <ID>Milliseconds</ID>
+          <Name>Milliseconds</Name>
+          <Source dwd:design-time-name="bd702239-cb05-4dc0-b800-81517643e609">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="34460d1a-71c4-4091-8b35-4559b4496835">
+              <TableID>dbo_FACTTiempoVuelta</TableID>
+              <ColumnID>milliseconds</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a9d505db-0486-4d0d-949e-4d81be4beacb">
+          <ID>FACT Tiempo Vuelta Count</ID>
+          <Name>FACT Tiempo Vuelta Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="2f188743-4deb-4f6f-a5b7-4661d041d64c">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="097356f9-5dff-414a-a63e-2c55fbb83c1a">
+              <TableID>dbo_FACTTiempoVuelta</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="d71c510f-ac2f-4bd8-bf83-16016b8758ad">
+          <CubeDimensionID>DIM Carreras</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="4ef04b4b-683a-421d-a0a0-c2896711d84d">
+              <AttributeID>Race Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="1261ebb7-66a4-4f2f-9fce-73409ee286b5">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="6d0832d7-8433-46d5-97fb-8bef225b0e2b">
+                    <TableID>dbo_FACTTiempoVuelta</TableID>
+                    <ColumnID>raceId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="782405ab-0a70-4fbe-ade8-7cb8d3812eff">
+          <CubeDimensionID>DIM Pilotos</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="a8bc5d77-4ba9-4aa6-ac8e-e1523c41497e">
+              <AttributeID>Driver Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="6cbc0f8c-4ae7-450e-8a49-31b115da14cd">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c8ccd885-48bb-48f3-963f-6a4dbee57631">
+                    <TableID>dbo_FACTTiempoVuelta</TableID>
+                    <ColumnID>driverId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="42f1ce7d-b28a-401b-9027-d3fc39d1ef1f">
+    <DataSourceViewID>F1 DWH</DataSourceViewID>
+  </Source>
+</Cube>

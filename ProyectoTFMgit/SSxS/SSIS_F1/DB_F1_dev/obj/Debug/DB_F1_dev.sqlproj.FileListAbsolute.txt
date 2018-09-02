@@ -1,0 +1,9 @@
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SSIS_F1\DB_F1_dev\bin\Debug\DB_F1_dev.dacpac
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SSIS_F1\DB_F1_dev\bin\Debug\DB_F1_dev.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SSIS_F1\DB_F1_dev\bin\Debug\DB_F1_dev.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SSIS_F1\DB_F1_dev\obj\Debug\Model.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SSIS_F1\DB_F1_dev\obj\Debug\refactor.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SSIS_F1\DB_F1_dev\obj\Debug\postdeploy.sql
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SSIS_F1\DB_F1_dev\obj\Debug\predeploy.sql
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SSIS_F1\DB_F1_dev\obj\Debug\DB_F1_dev.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\SSIS_F1\DB_F1_dev\obj\Debug\DB_F1_dev.pdb

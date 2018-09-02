@@ -1,0 +1,2547 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/28/2018 2:05:54 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PRUEBASAD"
+  DTS:CreatorName="ADPHP\Administrator"
+  DTS:DTSID="{D189810B-4A1B-4A44-B98E-EC5889303DFF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Carga Dim"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{8B31D7F3-B731-47EF-8719-F3F8F84210B1}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[F1_dev]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{64B82F75-7B90-447F-8914-E65A76943039}"
+      DTS:ObjectName="F1_dev">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=PRUEBASAD\SQLEXPRESS;Initial Catalog=F1_dev;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[F1_DWH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BC316FF0-EFA0-47D8-A8B6-A986221895C5}"
+      DTS:ObjectName="F1_DWH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=PRUEBASAD\SQLEXPRESS;Initial Catalog=F1_DWH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DIM"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{188707CD-37AB-4EC8-A6F5-98C3BFD1C6EE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DIM\Carreras"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Carreras"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Carreras]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM\Carreras.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[F1_dev]"
+                  connectionManagerRefId="Package.ConnectionManagers[F1_dev]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DIM\Carreras.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[raceId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Carreras.Outputs[OLE DB Source Output].ExternalColumns[raceId]"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[raceId]"
+                      name="raceId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[year]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Carreras.Outputs[OLE DB Source Output].ExternalColumns[year]"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[year]"
+                      name="year"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[round]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Carreras.Outputs[OLE DB Source Output].ExternalColumns[round]"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[round]"
+                      name="round"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[circuitId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Carreras.Outputs[OLE DB Source Output].ExternalColumns[circuitId]"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[circuitId]"
+                      name="circuitId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Carreras.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      length="255"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Carreras.Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[date]"
+                      name="date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[time]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Carreras.Outputs[OLE DB Source Output].ExternalColumns[time]"
+                      length="255"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[time]"
+                      name="time"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[url]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Carreras.Outputs[OLE DB Source Output].ExternalColumns[url]"
+                      length="255"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[url]"
+                      name="url"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Output].ExternalColumns[raceId]"
+                      dataType="i4"
+                      name="raceId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Output].ExternalColumns[year]"
+                      dataType="i4"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Output].ExternalColumns[round]"
+                      dataType="i4"
+                      name="round" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Output].ExternalColumns[circuitId]"
+                      dataType="i4"
+                      name="circuitId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Output].ExternalColumns[date]"
+                      dataType="dbTimeStamp"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Output].ExternalColumns[time]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="time" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Output].ExternalColumns[url]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="url" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[raceId]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[raceId]"
+                      name="raceId" />
+                    <outputColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[year]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[year]"
+                      name="year" />
+                    <outputColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[round]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[round]"
+                      name="round" />
+                    <outputColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[circuitId]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[circuitId]"
+                      name="circuitId" />
+                    <outputColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[name]"
+                      name="name" />
+                    <outputColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[date]"
+                      name="date" />
+                    <outputColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[time]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[time]"
+                      name="time" />
+                    <outputColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[url]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[url]"
+                      name="url" />
+                    <outputColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIM\Circuitos"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Circuitos"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Circuitos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM\Circuitos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[F1_dev]"
+                  connectionManagerRefId="Package.ConnectionManagers[F1_dev]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DIM\Circuitos.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[circuitId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].ExternalColumns[circuitId]"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[circuitId]"
+                      name="circuitId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[circuitRef]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].ExternalColumns[circuitRef]"
+                      length="255"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[circuitRef]"
+                      name="circuitRef"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      length="255"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[location]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].ExternalColumns[location]"
+                      length="255"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[location]"
+                      name="location"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      length="255"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[country]"
+                      name="country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[lat]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].ExternalColumns[lat]"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[lat]"
+                      name="lat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[lng]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].ExternalColumns[lng]"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[lng]"
+                      name="lng"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].ExternalColumns[circuitId]"
+                      dataType="i4"
+                      name="circuitId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].ExternalColumns[circuitRef]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="circuitRef" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].ExternalColumns[location]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="location" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].ExternalColumns[lat]"
+                      dataType="r8"
+                      name="lat" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].ExternalColumns[lng]"
+                      dataType="r8"
+                      name="lng" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].ExternalColumns[alt]"
+                      dataType="i4"
+                      name="alt" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].ExternalColumns[url]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="url" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DIM\Circuitos.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Error Output].Columns[circuitId]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Error Output].Columns[circuitId]"
+                      name="circuitId" />
+                    <outputColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Error Output].Columns[circuitRef]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Error Output].Columns[circuitRef]"
+                      name="circuitRef" />
+                    <outputColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Error Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Error Output].Columns[name]"
+                      name="name" />
+                    <outputColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Error Output].Columns[location]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Error Output].Columns[location]"
+                      name="location" />
+                    <outputColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Error Output].Columns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Error Output].Columns[country]"
+                      name="country" />
+                    <outputColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Error Output].Columns[lat]"
+                      dataType="r8"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Error Output].Columns[lat]"
+                      name="lat" />
+                    <outputColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Error Output].Columns[lng]"
+                      dataType="r8"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Error Output].Columns[lng]"
+                      name="lng" />
+                    <outputColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM\Circuitos.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIM\Constructores"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Constructores"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Constructores]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM\Constructores.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[F1_dev]"
+                  connectionManagerRefId="Package.ConnectionManagers[F1_dev]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DIM\Constructores.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM\Constructores.Outputs[OLE DB Source Output].Columns[constructorId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Constructores.Outputs[OLE DB Source Output].ExternalColumns[constructorId]"
+                      lineageId="Package\DIM\Constructores.Outputs[OLE DB Source Output].Columns[constructorId]"
+                      name="constructorId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Constructores.Outputs[OLE DB Source Output].Columns[constructorRef]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Constructores.Outputs[OLE DB Source Output].ExternalColumns[constructorRef]"
+                      length="255"
+                      lineageId="Package\DIM\Constructores.Outputs[OLE DB Source Output].Columns[constructorRef]"
+                      name="constructorRef"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Constructores.Outputs[OLE DB Source Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Constructores.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      length="255"
+                      lineageId="Package\DIM\Constructores.Outputs[OLE DB Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Constructores.Outputs[OLE DB Source Output].Columns[nationality]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Constructores.Outputs[OLE DB Source Output].ExternalColumns[nationality]"
+                      length="255"
+                      lineageId="Package\DIM\Constructores.Outputs[OLE DB Source Output].Columns[nationality]"
+                      name="nationality"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM\Constructores.Outputs[OLE DB Source Output].ExternalColumns[constructorId]"
+                      dataType="i4"
+                      name="constructorId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Constructores.Outputs[OLE DB Source Output].ExternalColumns[constructorRef]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="constructorRef" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Constructores.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Constructores.Outputs[OLE DB Source Output].ExternalColumns[nationality]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="nationality" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Constructores.Outputs[OLE DB Source Output].ExternalColumns[url]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="url" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DIM\Constructores.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM\Constructores.Outputs[OLE DB Source Error Output].Columns[constructorId]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Constructores.Outputs[OLE DB Source Error Output].Columns[constructorId]"
+                      name="constructorId" />
+                    <outputColumn
+                      refId="Package\DIM\Constructores.Outputs[OLE DB Source Error Output].Columns[constructorRef]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DIM\Constructores.Outputs[OLE DB Source Error Output].Columns[constructorRef]"
+                      name="constructorRef" />
+                    <outputColumn
+                      refId="Package\DIM\Constructores.Outputs[OLE DB Source Error Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DIM\Constructores.Outputs[OLE DB Source Error Output].Columns[name]"
+                      name="name" />
+                    <outputColumn
+                      refId="Package\DIM\Constructores.Outputs[OLE DB Source Error Output].Columns[nationality]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DIM\Constructores.Outputs[OLE DB Source Error Output].Columns[nationality]"
+                      name="nationality" />
+                    <outputColumn
+                      refId="Package\DIM\Constructores.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Constructores.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM\Constructores.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Constructores.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIM\DIMCarreras"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DIMCarreras"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[DIMCarreras]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM\DIMCarreras.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[F1_DWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[F1_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input].Columns[raceId]"
+                      cachedDataType="i4"
+                      cachedName="raceId"
+                      externalMetadataColumnId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input].ExternalColumns[raceId]"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[raceId]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input].Columns[year]"
+                      cachedDataType="i4"
+                      cachedName="year"
+                      externalMetadataColumnId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input].ExternalColumns[year]"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[year]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input].Columns[round]"
+                      cachedDataType="i4"
+                      cachedName="round"
+                      externalMetadataColumnId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input].ExternalColumns[round]"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[round]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input].Columns[circuitId]"
+                      cachedDataType="i4"
+                      cachedName="circuitId"
+                      externalMetadataColumnId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input].ExternalColumns[circuitId]"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[circuitId]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="name"
+                      externalMetadataColumnId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input].Columns[date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date"
+                      externalMetadataColumnId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      lineageId="Package\DIM\Carreras.Outputs[OLE DB Source Output].Columns[date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input].ExternalColumns[raceId]"
+                      dataType="i4"
+                      name="raceId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input].ExternalColumns[year]"
+                      dataType="i4"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input].ExternalColumns[round]"
+                      dataType="i4"
+                      name="round" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input].ExternalColumns[circuitId]"
+                      dataType="i4"
+                      name="circuitId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                      dataType="dbTimeStamp"
+                      name="date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIM\DIMCarreras.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM\DIMCarreras.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM\DIMCarreras.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM\DIMCarreras.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM\DIMCarreras.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIM\DIMCircuitos"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DIMCircuitos"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[DIMCircuitos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM\DIMCircuitos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[F1_DWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[F1_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].Columns[circuitId]"
+                      cachedDataType="i4"
+                      cachedName="circuitId"
+                      externalMetadataColumnId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].ExternalColumns[circuitId]"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[circuitId]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].Columns[circuitRef]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="circuitRef"
+                      externalMetadataColumnId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].ExternalColumns[circuitRef]"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[circuitRef]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="name"
+                      externalMetadataColumnId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].Columns[location]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="location"
+                      externalMetadataColumnId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].ExternalColumns[location]"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[location]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].Columns[country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[country]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].Columns[lat]"
+                      cachedDataType="r8"
+                      cachedName="lat"
+                      externalMetadataColumnId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].ExternalColumns[lat]"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[lat]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].Columns[lng]"
+                      cachedDataType="r8"
+                      cachedName="lng"
+                      externalMetadataColumnId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].ExternalColumns[lng]"
+                      lineageId="Package\DIM\Circuitos.Outputs[OLE DB Source Output].Columns[lng]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].ExternalColumns[circuitId]"
+                      dataType="i4"
+                      name="circuitId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].ExternalColumns[circuitRef]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="circuitRef" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].ExternalColumns[location]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="location" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].ExternalColumns[lat]"
+                      dataType="r8"
+                      name="lat" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input].ExternalColumns[lng]"
+                      dataType="r8"
+                      name="lng" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIM\DIMCircuitos.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM\DIMCircuitos.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM\DIMCircuitos.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM\DIMCircuitos.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM\DIMCircuitos.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIM\DIMConstructores"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DIMConstructores"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[DIMConstructores]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM\DIMConstructores.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[F1_DWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[F1_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DIM\DIMConstructores.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIM\DIMConstructores.Inputs[OLE DB Destination Input].Columns[constructorId]"
+                      cachedDataType="i4"
+                      cachedName="constructorId"
+                      externalMetadataColumnId="Package\DIM\DIMConstructores.Inputs[OLE DB Destination Input].ExternalColumns[constructorId]"
+                      lineageId="Package\DIM\Constructores.Outputs[OLE DB Source Output].Columns[constructorId]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMConstructores.Inputs[OLE DB Destination Input].Columns[constructorRef]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="constructorRef"
+                      externalMetadataColumnId="Package\DIM\DIMConstructores.Inputs[OLE DB Destination Input].ExternalColumns[constructorRef]"
+                      lineageId="Package\DIM\Constructores.Outputs[OLE DB Source Output].Columns[constructorRef]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMConstructores.Inputs[OLE DB Destination Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="name"
+                      externalMetadataColumnId="Package\DIM\DIMConstructores.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      lineageId="Package\DIM\Constructores.Outputs[OLE DB Source Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMConstructores.Inputs[OLE DB Destination Input].Columns[nationality]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="nationality"
+                      externalMetadataColumnId="Package\DIM\DIMConstructores.Inputs[OLE DB Destination Input].ExternalColumns[nationality]"
+                      lineageId="Package\DIM\Constructores.Outputs[OLE DB Source Output].Columns[nationality]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMConstructores.Inputs[OLE DB Destination Input].ExternalColumns[constructorId]"
+                      dataType="i4"
+                      name="constructorId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMConstructores.Inputs[OLE DB Destination Input].ExternalColumns[constructorRef]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="constructorRef" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMConstructores.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMConstructores.Inputs[OLE DB Destination Input].ExternalColumns[nationality]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="nationality" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIM\DIMConstructores.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DIM\DIMConstructores.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM\DIMConstructores.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM\DIMConstructores.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM\DIMConstructores.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM\DIMConstructores.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIM\DIMEstados"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DIMEstados"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[DIMEstados]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM\DIMEstados.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[F1_DWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[F1_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DIM\DIMEstados.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIM\DIMEstados.Inputs[OLE DB Destination Input].Columns[statusId]"
+                      cachedDataType="i4"
+                      cachedName="statusId"
+                      externalMetadataColumnId="Package\DIM\DIMEstados.Inputs[OLE DB Destination Input].ExternalColumns[statusId]"
+                      lineageId="Package\DIM\Estados.Outputs[OLE DB Source Output].Columns[statusId]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMEstados.Inputs[OLE DB Destination Input].Columns[status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="status"
+                      externalMetadataColumnId="Package\DIM\DIMEstados.Inputs[OLE DB Destination Input].ExternalColumns[status]"
+                      lineageId="Package\DIM\Estados.Outputs[OLE DB Source Output].Columns[status]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMEstados.Inputs[OLE DB Destination Input].ExternalColumns[statusId]"
+                      dataType="i4"
+                      name="statusId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMEstados.Inputs[OLE DB Destination Input].ExternalColumns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="status" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIM\DIMEstados.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DIM\DIMEstados.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM\DIMEstados.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM\DIMEstados.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM\DIMEstados.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM\DIMEstados.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIM\DIMPilotos"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DIMPilotos"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[DIMPilotos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM\DIMPilotos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[F1_DWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[F1_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input].Columns[driverId]"
+                      cachedDataType="i4"
+                      cachedName="driverId"
+                      externalMetadataColumnId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input].ExternalColumns[driverId]"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].Columns[driverId]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input].Columns[driverRef]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="driverRef"
+                      externalMetadataColumnId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input].ExternalColumns[driverRef]"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].Columns[driverRef]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input].Columns[forename]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="forename"
+                      externalMetadataColumnId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input].ExternalColumns[forename]"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].Columns[forename]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input].Columns[surname]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="surname"
+                      externalMetadataColumnId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input].ExternalColumns[surname]"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].Columns[surname]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input].Columns[dob]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="dob"
+                      externalMetadataColumnId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input].ExternalColumns[dob]"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].Columns[dob]" />
+                    <inputColumn
+                      refId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input].Columns[nationality]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="nationality"
+                      externalMetadataColumnId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input].ExternalColumns[nationality]"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].Columns[nationality]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input].ExternalColumns[driverId]"
+                      dataType="i4"
+                      name="driverId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input].ExternalColumns[driverRef]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="driverRef" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input].ExternalColumns[forename]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="forename" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input].ExternalColumns[surname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="surname" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input].ExternalColumns[dob]"
+                      dataType="dbTimeStamp"
+                      name="dob" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input].ExternalColumns[nationality]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="nationality" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIM\DIMPilotos.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM\DIMPilotos.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM\DIMPilotos.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM\DIMPilotos.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM\DIMPilotos.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIM\DIMTemporadas"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DIMTemporadas"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[DIMTemporadas]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM\DIMTemporadas.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[F1_DWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[F1_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DIM\DIMTemporadas.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIM\DIMTemporadas.Inputs[OLE DB Destination Input].Columns[year]"
+                      cachedDataType="i4"
+                      cachedName="year"
+                      externalMetadataColumnId="Package\DIM\DIMTemporadas.Inputs[OLE DB Destination Input].ExternalColumns[year]"
+                      lineageId="Package\DIM\Temporadas.Outputs[OLE DB Source Output].Columns[year]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM\DIMTemporadas.Inputs[OLE DB Destination Input].ExternalColumns[year]"
+                      dataType="i4"
+                      name="year" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIM\DIMTemporadas.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DIM\DIMTemporadas.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM\DIMTemporadas.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM\DIMTemporadas.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM\DIMTemporadas.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM\DIMTemporadas.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIM\Estados"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Estados"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Estados]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM\Estados.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[F1_dev]"
+                  connectionManagerRefId="Package.ConnectionManagers[F1_dev]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DIM\Estados.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM\Estados.Outputs[OLE DB Source Output].Columns[statusId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Estados.Outputs[OLE DB Source Output].ExternalColumns[statusId]"
+                      lineageId="Package\DIM\Estados.Outputs[OLE DB Source Output].Columns[statusId]"
+                      name="statusId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Estados.Outputs[OLE DB Source Output].Columns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Estados.Outputs[OLE DB Source Output].ExternalColumns[status]"
+                      length="255"
+                      lineageId="Package\DIM\Estados.Outputs[OLE DB Source Output].Columns[status]"
+                      name="status"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM\Estados.Outputs[OLE DB Source Output].ExternalColumns[statusId]"
+                      dataType="i4"
+                      name="statusId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Estados.Outputs[OLE DB Source Output].ExternalColumns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DIM\Estados.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM\Estados.Outputs[OLE DB Source Error Output].Columns[statusId]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Estados.Outputs[OLE DB Source Error Output].Columns[statusId]"
+                      name="statusId" />
+                    <outputColumn
+                      refId="Package\DIM\Estados.Outputs[OLE DB Source Error Output].Columns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DIM\Estados.Outputs[OLE DB Source Error Output].Columns[status]"
+                      name="status" />
+                    <outputColumn
+                      refId="Package\DIM\Estados.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Estados.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM\Estados.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Estados.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIM\Pilotos"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Pilotos"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Pilotos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM\Pilotos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[F1_dev]"
+                  connectionManagerRefId="Package.ConnectionManagers[F1_dev]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DIM\Pilotos.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].Columns[driverId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].ExternalColumns[driverId]"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].Columns[driverId]"
+                      name="driverId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].Columns[driverRef]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].ExternalColumns[driverRef]"
+                      length="255"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].Columns[driverRef]"
+                      name="driverRef"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].Columns[forename]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].ExternalColumns[forename]"
+                      length="255"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].Columns[forename]"
+                      name="forename"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].Columns[surname]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].ExternalColumns[surname]"
+                      length="255"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].Columns[surname]"
+                      name="surname"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].Columns[dob]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].ExternalColumns[dob]"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].Columns[dob]"
+                      name="dob"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].Columns[nationality]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].ExternalColumns[nationality]"
+                      length="255"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].Columns[nationality]"
+                      name="nationality"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].ExternalColumns[driverId]"
+                      dataType="i4"
+                      name="driverId" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].ExternalColumns[driverRef]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="driverRef" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].ExternalColumns[number]"
+                      dataType="i4"
+                      name="number" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].ExternalColumns[code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="code" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].ExternalColumns[forename]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="forename" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].ExternalColumns[surname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="surname" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].ExternalColumns[dob]"
+                      dataType="dbTimeStamp"
+                      name="dob" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].ExternalColumns[nationality]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="nationality" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Output].ExternalColumns[url]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="url" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DIM\Pilotos.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Error Output].Columns[driverId]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Error Output].Columns[driverId]"
+                      name="driverId" />
+                    <outputColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Error Output].Columns[driverRef]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Error Output].Columns[driverRef]"
+                      name="driverRef" />
+                    <outputColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Error Output].Columns[forename]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Error Output].Columns[forename]"
+                      name="forename" />
+                    <outputColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Error Output].Columns[surname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Error Output].Columns[surname]"
+                      name="surname" />
+                    <outputColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Error Output].Columns[dob]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Error Output].Columns[dob]"
+                      name="dob" />
+                    <outputColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Error Output].Columns[nationality]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Error Output].Columns[nationality]"
+                      name="nationality" />
+                    <outputColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM\Pilotos.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Pilotos.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIM\Temporadas"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Temporadas"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Temporadas]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM\Temporadas.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[F1_dev]"
+                  connectionManagerRefId="Package.ConnectionManagers[F1_dev]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DIM\Temporadas.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM\Temporadas.Outputs[OLE DB Source Output].Columns[year]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM\Temporadas.Outputs[OLE DB Source Output].ExternalColumns[year]"
+                      lineageId="Package\DIM\Temporadas.Outputs[OLE DB Source Output].Columns[year]"
+                      name="year"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM\Temporadas.Outputs[OLE DB Source Output].ExternalColumns[year]"
+                      dataType="i4"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\DIM\Temporadas.Outputs[OLE DB Source Output].ExternalColumns[url]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="url" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DIM\Temporadas.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM\Temporadas.Outputs[OLE DB Source Error Output].Columns[year]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Temporadas.Outputs[OLE DB Source Error Output].Columns[year]"
+                      name="year" />
+                    <outputColumn
+                      refId="Package\DIM\Temporadas.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Temporadas.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM\Temporadas.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM\Temporadas.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DIM.Paths[OLE DB Source Output]"
+              endId="Package\DIM\DIMCarreras.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIM\Carreras.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIM.Paths[OLE DB Source Output1]"
+              endId="Package\DIM\DIMCircuitos.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIM\Circuitos.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIM.Paths[OLE DB Source Output2]"
+              endId="Package\DIM\DIMConstructores.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIM\Constructores.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIM.Paths[OLE DB Source Output3]"
+              endId="Package\DIM\DIMPilotos.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIM\Pilotos.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIM.Paths[OLE DB Source Output4]"
+              endId="Package\DIM\DIMEstados.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIM\Estados.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DIM.Paths[OLE DB Source Output5]"
+              endId="Package\DIM\DIMTemporadas.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIM\Temporadas.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="98,42"
+          Id="Package\DIM"
+          TopLeft="509,115" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DIM">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="138,42"
+          Id="Package\DIM\DIMCarreras"
+          TopLeft="28,219" />
+        <NodeLayout
+          Size="129,42"
+          Id="Package\DIM\DIMPilotos"
+          TopLeft="631,225" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\DIM\DIMCircuitos"
+          TopLeft="215,222" />
+        <NodeLayout
+          Size="110,42"
+          Id="Package\DIM\Pilotos"
+          TopLeft="641,23" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\DIM\Temporadas"
+          TopLeft="1034,22" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\DIM\DIMTemporadas"
+          TopLeft="1020,228" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\DIM\DIMConstructores"
+          TopLeft="416,220" />
+        <NodeLayout
+          Size="115,42"
+          Id="Package\DIM\Estados"
+          TopLeft="850,23" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\DIM\DIMEstados"
+          TopLeft="838,226" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\DIM\Constructores"
+          TopLeft="431,27" />
+        <NodeLayout
+          Size="119,42"
+          Id="Package\DIM\Circuitos"
+          TopLeft="224,29" />
+        <NodeLayout
+          Size="119,42"
+          Id="Package\DIM\Carreras"
+          TopLeft="41,32" />
+        <EdgeLayout
+          Id="Package\DIM.Paths[OLE DB Source Output2]"
+          TopLeft="500.25,69">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,151"
+              Start="0,0"
+              End="0,143.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,143.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIM.Paths[OLE DB Source Output1]"
+          TopLeft="284,71">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,151"
+              Start="0,0"
+              End="0,143.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,143.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIM.Paths[OLE DB Source Output]"
+          TopLeft="98.75,74">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,145"
+              Start="0,0"
+              End="0,137.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,137.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIM.Paths[OLE DB Source Output5]"
+          TopLeft="1100.5,64">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,164"
+              Start="0,0"
+              End="0,156.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,156.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIM.Paths[OLE DB Source Output4]"
+          TopLeft="906.5,65">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,161"
+              Start="0,0"
+              End="0,153.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,153.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIM.Paths[OLE DB Source Output3]"
+          TopLeft="695.75,65">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,160"
+              Start="0,0"
+              End="0,152.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,152.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM\Estados">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM\DIMConstructores">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM\Temporadas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM\Constructores">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM\Pilotos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM\DIMPilotos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM\Circuitos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM\DIMEstados">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM\DIMCarreras">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM\DIMTemporadas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM\Carreras">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM\DIMCircuitos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
